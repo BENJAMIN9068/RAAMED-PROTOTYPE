@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TH Raamed — Medical Equipment B2B Website
 
-## Getting Started
+A modern, professional e-commerce-style website for **TH Raamed**, a B2B medical equipment company. Built with Next.js, Tailwind CSS, and Firebase.
 
-First, run the development server:
+> **Note:** This is NOT a standard e-commerce checkout site. Instead of cart/payment, every product has a **"Get Quote"** button that captures leads and provides WhatsApp/Call follow-up options.
 
+## Tech Stack
+
+- **Frontend:** Next.js 15 (App Router) + Tailwind CSS v4 + TypeScript
+- **Backend:** Next.js API Routes
+- **Database:** Firebase Firestore
+- **Auth:** Firebase Authentication
+- **Storage:** Firebase Storage (for product images)
+- **Live Tracking:** Firebase Realtime Database (visitor presence)
+- **Charts:** Recharts
+- **Icons:** Lucide React
+
+## Features
+
+### Public Website
+- 🏠 Home page with hero, categories, featured products, testimonials
+- 📦 Product catalog with search & category filters
+- 📋 Product detail pages with specs & image gallery
+- 📝 Lead capture modal (Get Quote → WhatsApp/Call)
+- 📞 Contact page with form & Google Maps
+- ℹ️ About Us page with company story & certifications
+- 💬 Floating WhatsApp button on all pages
+
+### Admin Panel (`/admin`)
+- 📊 Dashboard with stats cards, charts, recent leads
+- 📦 Product CRUD (add, edit, delete, specs, images)
+- 🏷️ Category management
+- 👥 Leads management (search, filter, status update, CSV export)
+- 📈 Analytics (per-product quote clicks, live visitors)
+- 🔒 Protected by Firebase Authentication
+
+## Setup
+
+### 1. Prerequisites
+- Node.js 18+
+- A Firebase project ([create one here](https://console.firebase.google.com))
+
+### 2. Firebase Setup
+1. Create a Firebase project
+2. Enable **Firestore Database**
+3. Enable **Authentication** → Email/Password sign-in
+4. Enable **Realtime Database**
+5. Enable **Storage** (optional, for product images)
+6. Create an admin user in Firebase Auth (email/password)
+7. Generate a **Service Account Key** (Project Settings → Service Accounts → Generate New Private Key)
+
+### 3. Environment Variables
 ```bash
+cp .env.local.example .env.local
+```
+Fill in all values in `.env.local` with your Firebase credentials.
+
+### 4. Install & Run
+```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 5. Seed the Database
+After starting the dev server, seed sample products by making a POST request:
+```bash
+curl -X POST http://localhost:3000/api/seed
+```
+This will add 8 sample medical products and 4 categories.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx            # Home
+│   ├── products/           # Products catalog & detail
+│   ├── about/              # About Us
+│   ├── contact/            # Contact Us
+│   ├── admin/              # Admin panel (protected)
+│   └── api/                # API routes
+├── components/
+│   ├── ui/                 # Reusable UI (Button, Modal, Input, Badge)
+│   ├── layout/             # Header, Footer, WhatsAppFAB
+│   ├── lead/               # GetQuoteModal
+│   └── products/           # ProductCard
+├── hooks/                  # useAuth, useLiveVisitors
+├── lib/                    # Firebase client/admin, utilities
+├── types/                  # TypeScript interfaces
+└── seed/                   # Sample data
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Company Info (Placeholders)
+- **Company:** TH Raamed
+- **WhatsApp:** +91 98765 43210
+- **Phone:** +91 98765 43210
+- **Email:** info@thraamed.com
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Update these in `.env.local`.
