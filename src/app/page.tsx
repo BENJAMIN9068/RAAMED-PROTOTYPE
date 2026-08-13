@@ -118,10 +118,10 @@ export default function HomePage() {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F26522]/15 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
-            {/* Left Column (7 cols): Hero Text & Stats */}
-            <div className="lg:col-span-7 space-y-6">
+            {/* Left Column: Hero Text & Stats */}
+            <div className="space-y-6">
               
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F26522]/20 border border-[#F26522]/40 text-[#FED7AA] text-xs font-bold backdrop-blur-md">
                 <Sparkles size={15} className="text-[#F26522] animate-pulse" />
@@ -132,7 +132,7 @@ export default function HomePage() {
                 High-Precision <span className="text-[#F26522]">Medical Devices</span> & Diagnostic Systems
               </h1>
 
-              <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-medium max-w-2xl">
+              <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">
                 TH Raamed delivers ISO 13485 & CE certified endoscopy towers, digital radiography X-ray machines, surgical OT equipment, and patient monitors directly to healthcare institutions across India.
               </p>
 
@@ -192,22 +192,22 @@ export default function HomePage() {
 
             </div>
 
-            {/* Right Column (5 cols): Doctor Team Photo Card */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            {/* Right Column: Doctor Team Photo Card (Symmetrically Balanced) */}
+            <div className="relative w-full">
+              <div className="relative w-full">
                 
                 {/* Glow ring */}
                 <div className="absolute -inset-1.5 bg-gradient-to-r from-[#F26522] to-[#102B7B] rounded-3xl blur-lg opacity-50 animate-pulse-glow" />
                 
                 {/* Image Box */}
-                <div className="relative rounded-3xl overflow-hidden border-2 border-[#F26522]/40 bg-slate-900 shadow-2xl">
-                  <div className="relative aspect-[4/3] w-full">
+                <div className="relative rounded-3xl overflow-hidden border-2 border-[#F26522]/40 bg-slate-900 shadow-2xl w-full">
+                  <div className="relative aspect-[16/11] sm:aspect-[16/10] lg:aspect-[4/3] w-full">
                     <Image
                       src="/images/hero_doctor_team.png"
                       alt="TH Raamed Doctor Team & Medical Equipment"
                       fill
                       priority
-                      sizes="(max-width: 1024px) 100vw, 45vw"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#071033] via-transparent to-transparent opacity-80" />
