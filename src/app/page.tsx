@@ -117,22 +117,22 @@ export default function HomePage() {
         {/* Glow ambient background */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F26522]/15 rounded-full blur-[140px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            {/* Left Column: Hero Text & Stats */}
-            <div className="space-y-6">
+            {/* Left Column (7 cols): Hero Text & Integrated Stats */}
+            <div className="lg:col-span-7 space-y-6 py-2 lg:py-6">
               
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F26522]/20 border border-[#F26522]/40 text-[#FED7AA] text-xs font-bold backdrop-blur-md">
                 <Sparkles size={15} className="text-[#F26522] animate-pulse" />
                 <span>Official B2B Medical Equipment Supplier — Pan-India</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.15] font-[var(--font-heading)]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-[1.12] font-[var(--font-heading)]">
                 High-Precision <span className="text-[#F26522]">Medical Devices</span> & Diagnostic Systems
               </h1>
 
-              <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">
+              <p className="text-sm sm:text-base lg:text-lg text-slate-200 leading-relaxed font-medium max-w-3xl">
                 TH Raamed delivers ISO 13485 & CE certified endoscopy towers, digital radiography X-ray machines, surgical OT equipment, and patient monitors directly to healthcare institutions across India.
               </p>
 
@@ -142,7 +142,7 @@ export default function HomePage() {
                   variant="orange"
                   size="md"
                   onClick={() => openQuote()}
-                  className="!px-6 !py-3.5 !rounded-xl !text-sm !font-black shadow-lg"
+                  className="!px-7 !py-4 !rounded-xl !text-base !font-black shadow-lg"
                 >
                   <PhoneCall size={18} />
                   Get Official Quote
@@ -152,7 +152,7 @@ export default function HomePage() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 bg-[#25D366] text-white font-extrabold text-sm rounded-xl shadow-md hover:bg-[#20BD5A] transition-all transform hover:scale-[1.02]"
+                  className="inline-flex items-center gap-2 px-6 py-4 bg-[#25D366] text-white font-extrabold text-base rounded-xl shadow-md hover:bg-[#20BD5A] transition-all transform hover:scale-[1.02]"
                 >
                   <MessageCircle size={18} />
                   Chat on WhatsApp
@@ -162,7 +162,7 @@ export default function HomePage() {
                   <Button
                     variant="outline"
                     size="md"
-                    className="!border-white/40 !text-white hover:!bg-white/10 hover:!border-white !px-5 !py-3.5 !rounded-xl !font-bold"
+                    className="!border-white/40 !text-white hover:!bg-white/10 hover:!border-white !px-6 !py-4 !rounded-xl !font-bold !text-base"
                   >
                     Explore Catalog
                     <ArrowRight size={16} />
@@ -173,48 +173,48 @@ export default function HomePage() {
               {/* Integrated Stats Grid Bar */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/15">
                 <div className="space-y-1">
-                  <div className="text-2xl font-black text-[#F26522]">500+</div>
-                  <div className="text-xs font-semibold text-slate-300">Hospitals Served</div>
+                  <div className="text-2xl sm:text-3xl font-black text-[#F26522]">500+</div>
+                  <div className="text-xs sm:text-sm font-semibold text-slate-300">Hospitals Served</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-2xl font-black text-white">15+ Yrs</div>
-                  <div className="text-xs font-semibold text-slate-300">Industry Experience</div>
+                  <div className="text-2xl sm:text-3xl font-black text-white">15+ Yrs</div>
+                  <div className="text-xs sm:text-sm font-semibold text-slate-300">Industry Experience</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-2xl font-black text-[#F26522]">100%</div>
-                  <div className="text-xs font-semibold text-slate-300">ISO & CE Certified</div>
+                  <div className="text-2xl sm:text-3xl font-black text-[#F26522]">100%</div>
+                  <div className="text-xs sm:text-sm font-semibold text-slate-300">ISO & CE Certified</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-2xl font-black text-white">24/7</div>
-                  <div className="text-xs font-semibold text-slate-300">AMC Support</div>
+                  <div className="text-2xl sm:text-3xl font-black text-white">24/7</div>
+                  <div className="text-xs sm:text-sm font-semibold text-slate-300">AMC Support</div>
                 </div>
               </div>
 
             </div>
 
-            {/* Right Column: Doctor Team Photo Card (Symmetrically Balanced) */}
-            <div className="relative w-full">
-              <div className="relative w-full">
+            {/* Right Column (5 cols): Tight-fitting Doctor Team Photo Card */}
+            <div className="lg:col-span-5 relative w-full h-full flex items-center justify-center">
+              <div className="relative w-full h-full min-h-[380px] lg:min-h-[480px]">
                 
                 {/* Glow ring */}
                 <div className="absolute -inset-1.5 bg-gradient-to-r from-[#F26522] to-[#102B7B] rounded-3xl blur-lg opacity-50 animate-pulse-glow" />
                 
                 {/* Image Box */}
-                <div className="relative rounded-3xl overflow-hidden border-2 border-[#F26522]/40 bg-slate-900 shadow-2xl w-full">
-                  <div className="relative aspect-[16/11] sm:aspect-[16/10] lg:aspect-[4/3] w-full">
+                <div className="relative rounded-3xl overflow-hidden border-2 border-[#F26522]/40 bg-slate-900 shadow-2xl w-full h-full flex flex-col justify-between">
+                  <div className="relative w-full h-[320px] sm:h-[380px] lg:h-full min-h-[300px]">
                     <Image
                       src="/images/hero_doctor_team.png"
                       alt="TH Raamed Doctor Team & Medical Equipment"
                       fill
                       priority
-                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      sizes="(max-width: 1024px) 100vw, 42vw"
                       className="object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#071033] via-transparent to-transparent opacity-80" />
                   </div>
 
                   {/* Top Live Badge */}
-                  <div className="absolute top-3 right-3 bg-[#071033]/90 backdrop-blur-md border border-[#F26522]/50 px-3 py-1.5 rounded-xl flex items-center gap-2 shadow-xl">
+                  <div className="absolute top-3 right-3 bg-[#071033]/90 backdrop-blur-md border border-[#F26522]/50 px-3 py-1.5 rounded-xl flex items-center gap-2 shadow-xl z-20">
                     <span className="relative flex h-2.5 w-2.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F26522] opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#F26522]"></span>
@@ -223,7 +223,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Bottom Stats Card */}
-                  <div className="p-4 bg-[#071033] border-t border-white/10 flex items-center justify-between">
+                  <div className="p-4 bg-[#071033] border-t border-white/10 flex items-center justify-between z-20 relative">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-lg bg-[#F26522] flex items-center justify-center text-white font-bold shrink-0">
                         <Stethoscope size={18} />
@@ -235,7 +235,7 @@ export default function HomePage() {
                     </div>
                     <button
                       onClick={() => openQuote()}
-                      className="px-3.5 py-1.5 bg-[#F26522] text-white font-black text-xs rounded-lg hover:bg-orange-600 transition-all shadow"
+                      className="px-4 py-2 bg-[#F26522] text-white font-black text-xs rounded-lg hover:bg-orange-600 transition-all shadow"
                     >
                       Enquire Now
                     </button>
